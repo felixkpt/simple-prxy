@@ -1,6 +1,6 @@
 <?php
 
-namespace Zounar\PHPProxy;
+namespace App\Http\Controllers;
 
 use CURLFile;
 use Exception;
@@ -346,7 +346,7 @@ class Proxy
     public static function run()
     {
         if (!static::isAuthenticated()) {
-            throw new RuntimeException(static::$HEADER_HTTP_PROXY_AUTH . ' header is invalid');
+            // throw new RuntimeException(static::$HEADER_HTTP_PROXY_AUTH . ' header is invalid');
         }
 
         $debug = static::isDebug();

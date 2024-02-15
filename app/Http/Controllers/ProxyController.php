@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Zounar\PHPProxy\Proxy;
-
 class ProxyController extends Controller
 {
 
