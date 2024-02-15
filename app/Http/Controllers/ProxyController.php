@@ -2,8 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Zounar\PHPProxy\Proxy;
+
 class ProxyController extends Controller
 {
+
+    public function actionProxy()
+    {
+        Proxy::$AUTH_KEY = 'Bj5pnZEX6DkcG6Nz6AjDUT1bvcGRVhRaXDuKDX9CjsEs2';
+        // Do your custom logic before running proxy
+        $responseCode = Proxy::run();
+
+        return $this->index();
+        // Do your custom logic after running proxy
+        // You can utilize HTTP response code returned from the run() method
+    }
+
     public function index()
     {
         $source = request()->source;

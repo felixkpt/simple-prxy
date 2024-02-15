@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/get", [ProxyController::class, "index"]);
+Route::get("/get", [ProxyController::class, "actionProxy"]);
 
 Route::get('/', function () {
     return view('welcome');
