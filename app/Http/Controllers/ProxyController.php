@@ -9,9 +9,14 @@ class ProxyController extends Controller
     {
         Proxy::$AUTH_KEY = 'Bj5pnZEX6DkcG6Nz6AjDUT1bvcGRVhRaXDuKDX9CjsEs2';
         // Do your custom logic before running proxy
-        $responseCode = Proxy::run();
 
-        return $this->index();
+        $responseBody = '';
+        ob_start();
+        $responseCode = Proxy::run();
+        $responseBody = ob_get_clean();
+
+        return view('proxy', ['content' => $responseBody]);
+
         // Do your custom logic after running proxy
         // You can utilize HTTP response code returned from the run() method
     }
